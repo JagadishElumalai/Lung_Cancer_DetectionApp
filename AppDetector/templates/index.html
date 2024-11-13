@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Lung Detection App</title>
+</head>
+<body class="body_index">
+    <div class="container">
+        <h1>Lung Detection Model</h1>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="mhd" accept=".mhd" required>
+            <input type="file" name="raw" accept=".raw" required>
+            <button type="submit">Upload and Analyze</button>
+        </form>
+    </div>
+</body>
+</html>

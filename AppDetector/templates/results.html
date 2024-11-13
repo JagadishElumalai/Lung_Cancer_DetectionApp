@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Results</title>
+</head>
+<body class="body_results">
+    <div class="container">
+        <h1>Analysis Results</h1>
+        <h2>Normalized Image</h2>
+        <img src="{{ url_for('static', filename='assets/normalized_image.png') }}" alt="Normalized Image">
+        
+        <h2>Extracted Lung Mask Video</h2>
+        <video controls>
+            <source src="{{ url_for('static', filename='assets/extracted_lungs_video.webm') }}" type="video/webm">
+        </video>
+
+        <h2>Final Combined Image with Bounding Boxes Video</h2>
+        <video controls>
+            <source src="{{ url_for('static', filename='assets/final_img_bbox_video.webm') }}" type="video/webm">
+        </video>
+
+        <h2>Cancer Probability</h2>
+        <ul>
+            {% for prob in cancer_probabilities %}
+            <li>{{ prob }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
